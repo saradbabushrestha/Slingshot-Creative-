@@ -49,27 +49,7 @@ const SlingShotLanding: React.FC = () => {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-amber-600 rounded-full flex items-center justify-center transform hover:rotate-12 transition-transform">
-                <svg
-                  className="w-8 h-8 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
-              </div>
-              <div>
-                <div className="text-xl font-bold text-gray-800">SlingShot</div>
-                <div className="text-xs text-orange-600 tracking-wider">
-                  CREATIVE
-                </div>
-              </div>
+              <img src="public/horilogo.png" alt="Logo" className="w-45 h-20" />
             </div>
 
             {/* Desktop Navigation */}
@@ -159,7 +139,7 @@ const SlingShotLanding: React.FC = () => {
       </section>
 
       {/* 3D Image Carousel Section */}
-      <section className="relative w-full h-[450px] sm:h-[500px] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full h-[450px] sm:h-[500px] flex items-center justify-center ">
         <div className="relative w-[90%] sm:w-[420px] md:w-[500px] h-[300px] sm:h-[380px] md:h-[420px] perspective-[1000px]">
           <div
             className="absolute inset-0 flex items-center justify-center"
