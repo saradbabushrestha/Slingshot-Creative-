@@ -2,7 +2,7 @@ import React from "react";
 
 const About: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-50 py-16 px-4">
+    <div className="min-h-50% bg-gray-50 py-16 px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left side - Images */}
         <div className="relative w-full flex justify-center lg:justify-start">
