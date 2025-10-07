@@ -1,26 +1,116 @@
 import React from "react";
 
-const Navbar: React.FC = () => {
+type NavBarProps = {
+  scrollY: number;
+  isMenuOpen: boolean;
+  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const navItems = [
+  "Home",
+  "About us",
+  "Services",
+  "Case Studies",
+  "Our Client",
+  "FAQ",
+];
+
+const NavBar: React.FC<NavBarProps> = ({
+  scrollY,
+  isMenuOpen,
+  setIsMenuOpen,
+}) => {
   return (
-    <nav className="flex justify-between items-center px-10 py-5 bg-white shadow-md fixed w-full top-0 z-50">
-      <div className="flex items-center gap-2">
-        <img src="/assets/logo.svg" alt="Logo" className="h-8" />
-        <span className="text-xl font-semibold text-orange-700">SlingShot</span>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 will-change-transform ${
+        scrollY > 50 || isMenuOpen
+          ? "bg-white/90 backdrop-blur-md shadow-md"
+          : "bg-transparent"
+      }`}
+      style={{
+        WebkitBackfaceVisibility: "hidden",
+        backfaceVisibility: "hidden",
+        transform: "translateZ(0)",
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <div className="flex items-center space-x-3">
+            <img src="/horilogo.png" alt="Logo" className="w-auto h-16" />
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-8">
+            {navItems.map((item, idx) => (
+              <a
+                key={idx}
+                href={`#${item.toLowerCase().replace(" ", "-")}`}
+                className="text-gray-700 hover:text-orange-600 transition-colors text-sm font-medium"
+              >
+                {item}
+              </a>
+            ))}
+            <button className="bg-gradient-to-r from-orange-600 to-amber-600 text-white px-6 py-2.5 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all font-medium">
+              Contact us
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {isMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        <div
+          className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="pb-4 px-4">
+            {navItems.map((item, idx) => (
+              <a
+                key={idx}
+                href={`#${item.toLowerCase().replace(" ", "-")}`}
+                className="block py-3 text-gray-700 hover:text-orange-600 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item}
+              </a>
+            ))}
+            <button className="w-full mt-4 bg-gradient-to-r from-orange-600 to-amber-600 text-white px-6 py-2.5 rounded-lg">
+              Contact us
+            </button>
+          </div>
+        </div>
       </div>
-      <ul className="hidden md:flex space-x-8 text-gray-800 font-medium">
-        <li>Home</li>
-        <li>About us</li>
-        <li>Services</li>
-        <li>Case Studies</li>
-        <li>Our Client</li>
-        <li>How it Works</li>
-        <li>FAQ</li>
-      </ul>
-      <button className="bg-orange-700 hover:bg-orange-800 text-white px-4 py-2 rounded-lg">
-        Contact us
-      </button>
     </nav>
   );
 };
 
-export default Navbar;
+export default NavBar;

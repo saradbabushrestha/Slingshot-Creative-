@@ -1,12 +1,13 @@
 import "./App.css";
-import Navbar from "./component/Navbar";
+import About from "./page/About";
+
 import Home from "./page/Home";
 
 const App: React.FC = () => {
   return (
     <>
-      {/* <Navbar /> */}
       <Home />
+      <About />
     </>
   );
 };

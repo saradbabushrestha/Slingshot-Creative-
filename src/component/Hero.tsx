@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import NavBar from "./Navbar";
 
 const SlingShotLanding: React.FC = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -26,105 +27,17 @@ const SlingShotLanding: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = [
-    "Home",
-    "About us",
-    "Services",
-    "Case Studies",
-    "Our Client",
-    "FAQ",
-  ];
-
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-orange-50 to-amber-100 overflow-x-hidden">
       {/* Navigation */}
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrollY > 50 || isMenuOpen
-            ? "bg-white/90 backdrop-blur-md shadow-md"
-            : "bg-transparent"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <div className="flex items-center space-x-3">
-              <img src="public/horilogo.png" alt="Logo" className="w-45 h-20" />
-            </div>
-
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8">
-              {navItems.map((item, idx) => (
-                <a
-                  key={idx}
-                  href={`#${item.toLowerCase().replace(" ", "-")}`}
-                  className="text-gray-700 hover:text-orange-600 transition-colors text-sm font-medium"
-                >
-                  {item}
-                </a>
-              ))}
-              <button className="bg-gradient-to-r from-orange-600 to-amber-600 text-white px-6 py-2.5 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all font-medium">
-                Contact us
-              </button>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                {isMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
-            </button>
-          </div>
-
-          {/* Mobile Menu */}
-          <div
-            className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-              isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-            }`}
-          >
-            <div className="pb-4 px-4">
-              {navItems.map((item, idx) => (
-                <a
-                  key={idx}
-                  href={`#${item.toLowerCase().replace(" ", "-")}`}
-                  className="block py-3 text-gray-700 hover:text-orange-600 transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item}
-                </a>
-              ))}
-              <button className="w-full mt-4 bg-gradient-to-r from-orange-600 to-amber-600 text-white px-6 py-2.5 rounded-lg">
-                Contact us
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <NavBar
+        scrollY={scrollY}
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
+      />
 
       {/* Hero Section */}
-      <section className="relative w-full pt-32 pb-20 flex flex-col items-center text-center px-4 sm:px-6">
+      <section className="relative w-full pt-[6rem] pb-20 flex flex-col items-center text-center px-4 sm:px-6">
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight animate-fade-in">
           Creativity in Motion: Aiming Beyond Ordinary
         </h1>
@@ -139,13 +52,14 @@ const SlingShotLanding: React.FC = () => {
       </section>
 
       {/* 3D Image Carousel Section */}
-      <section className="relative w-full h-[450px] sm:h-[500px] flex items-center justify-center ">
-        <div className="relative w-[90%] sm:w-[420px] md:w-[500px] h-[300px] sm:h-[380px] md:h-[420px] perspective-[1000px]">
+      <section className="relative w-full h-[450px] sm:h-[600px] flex items-center justify-center overflow-hidden">
+        <div className="relative w-[90%] sm:w-[420px] md:w-[500px] h-[300px] sm:h-[380px] md:h-[420px] perspective-[1000px] will-change-transform">
           <div
             className="absolute inset-0 flex items-center justify-center"
             style={{
               transformStyle: "preserve-3d",
               animation: "spin 25s linear infinite",
+              transformOrigin: "center center",
             }}
           >
             {[
@@ -158,13 +72,14 @@ const SlingShotLanding: React.FC = () => {
               "https://images.unsplash.com/photo-1483794344563-d27a8d18014e?w=400&h=600&fit=crop",
               "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400&h=600&fit=crop",
             ].map((src, i) => {
-              const angle = (i * 360) / 8; // 8 images
+              const angle = (i * 360) / 8;
               return (
                 <div
                   key={i}
                   className="absolute w-28 h-44 sm:w-40 sm:h-56 md:w-52 md:h-72 rounded-2xl overflow-hidden shadow-xl transition-transform duration-300 hover:scale-110"
                   style={{
                     transform: `rotateY(${angle}deg) translateZ(${translateZ}px)`,
+                    backfaceVisibility: "visible",
                   }}
                 >
                   <img
@@ -181,10 +96,13 @@ const SlingShotLanding: React.FC = () => {
 
       {/* Global Styles */}
       <style>{`
+        html { overflow-y: scroll; }
+
         @keyframes spin {
           from { transform: rotateY(0deg); }
           to { transform: rotateY(360deg); }
         }
+
         .perspective-[1000px] {
           perspective: 1000px;
         }
@@ -193,6 +111,7 @@ const SlingShotLanding: React.FC = () => {
           from { opacity: 0; transform: translateY(20px); }
           to { opacity: 1; transform: translateY(0); }
         }
+
         .animate-fade-in {
           animation: fade-in 0.8s ease-out;
         }

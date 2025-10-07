@@ -1,10 +1,14 @@
 import React from "react";
-import Hero from "../component/Hero";
+
+import SlingShotLanding from "../component/Hero";
+import PartnerMarquee from "../component/PartnerMarquee";
+import { partnerLogos } from "../utils/logos";
 
 const Home: React.FC = () => {
   return (
     <div>
-      <Hero />
+      <SlingShotLanding />
+      <PartnerMarquee logos={partnerLogos} speed={30} />
     </div>
   );
 };
