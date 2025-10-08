@@ -3,6 +3,7 @@ import About from "./page/About";
 
 import Home from "./page/Home";
 import Services from "./page/Service";
+import WhyChooseUs from "./page/Whyus";
 
 const App: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ const App: React.FC = () => {
       <Home />
       <About />
       <Services />
+      <WhyChooseUs />
     </>
   );
 };
