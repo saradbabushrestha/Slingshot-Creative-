@@ -4,6 +4,7 @@ import About from "./page/About";
 import Home from "./page/Home";
 import PortfolioGrid from "./page/Project";
 import Services from "./page/Service";
+import TestimonialsCarousel from "./page/Testimonials";
 import WhyChooseUs from "./page/Whyus";
 
 const App: React.FC = () => {
@@ -14,6 +15,7 @@ const App: React.FC = () => {
       <Services />
       <WhyChooseUs />
       <PortfolioGrid />
+      <TestimonialsCarousel />
     </>
   );
 };

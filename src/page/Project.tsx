@@ -76,7 +76,9 @@ const PortfolioGrid: React.FC = () => {
                 <h3 className="text-white font-semibold text-lg">
                   {item.title}
                 </h3>
-                <p className="text-white/80 text-sm mt-1">View Details →</p>
+                <p className="text-white/80 text-sm mt-1">
+                  Its Short Description{" "}
+                </p>
               </div>
             </div>
           ))}
