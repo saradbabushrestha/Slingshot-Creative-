@@ -13,51 +13,51 @@ const Services: React.FC = () => {
   const services: Service[] = [
     {
       id: 1,
-      title: "Software Development",
+      title: "Content Creation & Marketing",
       description:
-        "We Customize Office Productivity, Data Management Software, Media Players And Security Programs",
+        "We produce engaging and relevant content across various formats to tell your brand's story and attract your ideal customers.",
       image: "/horilogo.png",
     },
     {
       id: 2,
-      title: "IT Maintenance",
+      title: "Digital Marketing Campaigns",
       description:
-        "Supports Your Business's Daily Tasks, Keeps Your And Your Customers' Data Safe",
+        "We design and execute data-driven digital campaigns that maximize reach, engagement, and conversion across all online channels.",
       image: "/horilogo.png",
     },
     {
       id: 3,
-      title: "Cloud Computing",
+      title: "Video Production",
       description:
-        "Deliver Computing Services— Including Servers, Storage, Databases, Networking, Software, Analytics, And Intelligence",
+        "We bring narratives to life through high-quality video content, from concept to post-production, for impactful storytelling.",
       image: "/horilogo.png",
     },
     {
       id: 4,
-      title: "Network Integration",
+      title: "Graphic Design & Visual Branding",
       description:
-        "Process Of Combining Different Computer Networks Or Network Devices To Form A Larger, More Functional Network",
+        "We create stunning visual identities and compelling graphic assets that ensure your brand stands out in a crowded marketplace.",
       image: "/horilogo.png",
     },
     {
       id: 5,
-      title: "Cyber Security",
+      title: "Social Media Management",
       description:
-        "Processes, And Controls To Protect Systems, Networks, Programs, Devices And Data From Cyber Attacks",
+        "We cultivate vibrant online communities and manage your social presence to foster brand loyalty and drive conversations.",
       image: "/horilogo.png",
     },
     {
       id: 6,
-      title: "Geo Location",
+      title: "Website Design & Development",
       description:
-        "geographic information and location intelligence solution, that when integrated as a data visualisation dashboard",
+        "We craft intuitive, aesthetically pleasing, and high-performing websites that serve as the digital cornerstone of your brand.",
       image: "/horilogo.png",
     },
     {
       id: 7,
-      title: "Digital Marketing",
+      title: "Public Relations & Outreach",
       description:
-        "Promotion Of Brands To Connect With Potential Customers Using The Internet And Other Forms Of Digital Platforms",
+        "We strategically manage your public image and secure valuable media placements to enhance credibility and awareness.",
       image: "/horilogo.png",
     },
     {
