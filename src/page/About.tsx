@@ -37,10 +37,11 @@ const About: React.FC = () => {
             ABOUT US
           </h1>
           <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
-            A slingshot or catapult is a small hand-powered projectile weapon.
-            The classic form consists of a Y-shaped frame, with two tubes or
-            strips made from either a natural rubber or synthetic elastic
-            material. These are attached to the upper two ends.
+            We are SlingShot Creatives — a dynamic marketing agency and
+            production house dedicated to transforming bold ideas into
+            captivating realities. We craft compelling stories with unparalleled
+            originality, strategic precision, and measurable impact, helping
+            your brand resonate powerfully with its audience.
           </p>
           <button className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl">
             EXPLORE SERVICES

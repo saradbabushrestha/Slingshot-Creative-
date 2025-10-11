@@ -39,12 +39,12 @@ const SlingShotLanding: React.FC = () => {
       {/* Hero Section */}
       <section className="relative w-full pt-[6rem] pb-20 flex flex-col items-center text-center px-4 sm:px-6">
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight animate-fade-in">
-          Creativity in Motion: Aiming Beyond Ordinary
+          Aim Higher. Create Bolder. Impact Deeper.
         </h1>
         <p className="text-base sm:text-lg lg:text-xl text-gray-700 mb-8 sm:mb-10 max-w-3xl leading-relaxed">
-          We are SlingShot Creative — a production house and creative agency
-          bringing bold ideas to life. We craft stories with originality,
-          precision, and impact.
+          To empower businesses of all sizes to achieve their marketing
+          aspirations by delivering bespoke, creative solutions that not only
+          capture attention but also drive meaningful engagement and growth.
         </p>
         <button className="bg-gradient-to-r from-amber-700 to-orange-700 text-white px-8 sm:px-10 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:shadow-2xl transform hover:scale-105 transition-all">
           Explore More
