@@ -35,27 +35,27 @@ export default function WhyChooseUs() {
   const features: FeatureProps[] = [
     {
       number: "1",
-      title: "SlingShot 1",
+      title: "Unrivaled Creativity & Innovation",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh f",
+        "We don't just follow trends; we set them. Our team of imaginative thinkers consistently delivers fresh, groundbreaking ideas that ensure your brand captures attention and leaves a lasting impression.",
     },
     {
       number: "2",
-      title: "SlingShot 2",
+      title: "Strategic, Results-Driven Approach",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh f",
+        "Every campaign we undertake is meticulously planned with your business objectives at its core. We combine creative flair with analytical rigor to deliver measurable outcomes and a strong return on your investment.",
     },
     {
       number: "3",
-      title: "SlingShot 3",
+      title: "Integrated Full-Service Expertise",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh f",
+        "From initial strategy to final execution, we offer a comprehensive suite of marketing and production services under one roof, ensuring seamless communication, consistent branding, and efficient project management.",
     },
     {
       number: "4",
-      title: "SlingShot 4",
+      title: "Client-Centric Partnership",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh f",
+        "Your success is our priority. We pride ourselves on fostering transparent, collaborative relationships, actively listening to your needs, and adapting our strategies to achieve your specific goals with dedication and flexibility.",
     },
   ];
 
