@@ -2,6 +2,7 @@ import "./App.css";
 import About from "./page/About";
 
 import Home from "./page/Home";
+import MailSection from "./page/MailSection";
 import PortfolioGrid from "./page/Project";
 import Services from "./page/Service";
 import TestimonialsCarousel from "./page/Testimonials";
@@ -16,6 +17,7 @@ const App: React.FC = () => {
       <WhyChooseUs />
       <PortfolioGrid />
       <TestimonialsCarousel />
+      <MailSection />
     </>
   );
 };
