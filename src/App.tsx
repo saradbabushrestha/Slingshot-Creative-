@@ -1,5 +1,6 @@
 import "./App.css";
 import About from "./page/About";
+import FAQAccordion from "./page/FAQ";
 
 import Home from "./page/Home";
 import MailSection from "./page/MailSection";
@@ -18,6 +19,7 @@ const App: React.FC = () => {
       <PortfolioGrid />
       <TestimonialsCarousel />
       <MailSection />
+      <FAQAccordion />
     </>
   );
 };
