@@ -8,34 +8,41 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "Why do I need to use a Design System?",
+    question: "What types of businesses do you work with?",
     answer:
-      "A Design System is a super useful tool for designers. It helps keep designs consistent and makes the design process faster. You can use pre-designed stuff over and over, and it's helpful for both new and experienced designers. In short, a Design System is like a designer's toolbox for making great-looking and user-friendly designs.",
+      "We partner with businesses of all sizes, from ambitious startups to established enterprises, across a diverse range of industries. Our adaptable approach ensures tailored solutions for every client.",
   },
   {
-    question: "Is there a preview or a free trial available?",
+    question: "How do you measure the success of your campaigns?",
     answer:
-      "Yes! We offer a 14-day free trial with full access to all features. No credit card required. You can explore all the components, templates, and tools to see if it fits your workflow before making a commitment.",
+      "We define success based on your specific goals. We utilize key performance indicators (KPIs) such as website traffic, conversion rates, engagement metrics, and ROI, providing regular, transparent reports on our progress.",
   },
   {
-    question: "Where can I purchase AlignUI Design System?",
+    question: "What is your typical project timeline?",
     answer:
-      "You can purchase AlignUI Design System directly from our website. We accept all major credit cards, PayPal, and offer flexible licensing options for teams and enterprises. Educational discounts are also available.",
+      "Project timelines vary depending on the scope and complexity of the services required. We provide a detailed project plan and timeline after our initial consultation and proposal.",
   },
   {
-    question: "What are the recent updates and enhancements in AlignUI?",
+    question:
+      "Can you help us with a specific one-off project, or do you only offer ongoing retainers?",
     answer:
-      "Our latest update includes 50+ new components, improved dark mode support, enhanced accessibility features, better Figma auto-layout integration, and performance optimizations. We release updates monthly based on community feedback.",
+      "We offer both project-based services and ongoing retainer agreements. Whether you need support for a single campaign or a long-term marketing partnership, we can tailor our engagement to your needs.",
   },
   {
-    question: "How do I install AlignUI Design System in Figma?",
+    question: "How do you ensure our brand's voice and vision are maintained?",
     answer:
-      "Installing is simple: 1) Open Figma, 2) Go to the Community tab, 3) Search for 'AlignUI', 4) Click 'Duplicate' to add it to your files, 5) Start using the components by enabling the library in your design file. Detailed video tutorials are available on our documentation page.",
+      "Our process begins with an in-depth discovery phase to thoroughly understand your brand's unique identity, values, and objectives. We maintain close collaboration and seek your feedback at every stage to ensure alignment.",
   },
   {
-    question: "Can I use AlignUI Design System for commercial projects?",
+    question:
+      "What is the process for starting a project with SlingShot Creatives?",
     answer:
-      "Absolutely! Our commercial license allows you to use AlignUI in unlimited commercial projects. This includes client work, SaaS products, and any revenue-generating applications. Team licenses are available for agencies and larger organizations.",
+      "It all begins with a complimentary consultation! Contact us to discuss your needs, and we'll provide a customized proposal outlining our recommended strategy, services, and pricing. We also additionally have our service in package format which you can choose from.",
+  },
+  {
+    question: "Do you offer services beyond what is listed on your website?",
+    answer:
+      "Our listed services cover our core competencies, but we are always open to discussing unique challenges and custom solutions. Please reach out to us with your specific requirements.",
   },
 ];
 
