@@ -85,27 +85,112 @@ const TestimonialsCarousel: React.FC = () => {
         </div>
       </div>
 
-      {/* Brown Gradient Section (Bottom in mobile / Right in desktop) */}
-      <div
-        className="w-screen flex-1 flex items-center justify-center  py-12 sm:py-16 px-4 sm:px-6 lg:px-10 relative overflow-hidden"
-        style={{
-          background:
-            "linear-gradient(360deg, #FEF3C7 10%, #fbb87e 50%, #FEF3C7 85%)",
-        }}
-      >
-        {/* Subtle diagonal texture */}
-        <div
-          className="absolute inset-0 opacity-10 "
-          style={{
-            backgroundImage: `repeating-linear-gradient(
-              45deg,
-              transparent,
-              transparent 10px,
-              rgba(255,255,255,0.1) 10px,
-              rgba(255,255,255,0.1) 20px
-            )`,
-          }}
-        />
+      {/* White Background Section with Floating Bubbles */}
+      <div className="w-screen flex-1 flex items-center justify-center py-12 sm:py-16 px-4 sm:px-6 lg:px-10 relative overflow-hidden bg-white border-amber-600 border-2">
+        {/* Animated floating bubbles */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Large bubbles */}
+          <div
+            className="absolute w-32 h-32 rounded-full border-2 border-orange-200"
+            style={{
+              top: "15%",
+              left: "8%",
+              animation: "floatBubble 20s ease-in-out infinite",
+              background:
+                "radial-gradient(circle at 30% 30%, rgba(251, 184, 126, 0.15), rgba(251, 184, 126, 0.05))",
+            }}
+          />
+          <div
+            className="absolute w-48 h-48 rounded-full border-2 border-orange-100"
+            style={{
+              top: "60%",
+              right: "12%",
+              animation: "floatBubble 25s ease-in-out infinite reverse",
+              background:
+                "radial-gradient(circle at 30% 30%, rgba(254, 243, 199, 0.2), rgba(254, 243, 199, 0.05))",
+            }}
+          />
+          <div
+            className="absolute w-40 h-40 rounded-full border-2 border-orange-200"
+            style={{
+              bottom: "25%",
+              left: "18%",
+              animation: "floatBubble 22s ease-in-out infinite",
+              background:
+                "radial-gradient(circle at 30% 30%, rgba(251, 184, 126, 0.12), rgba(251, 184, 126, 0.03))",
+            }}
+          />
+          <div
+            className="absolute w-56 h-56 rounded-full border-2 border-orange-100"
+            style={{
+              top: "35%",
+              right: "20%",
+              animation: "floatBubble 28s ease-in-out infinite reverse",
+              background:
+                "radial-gradient(circle at 30% 30%, rgba(254, 243, 199, 0.18), rgba(254, 243, 199, 0.04))",
+            }}
+          />
+
+          {/* Small bubbles */}
+          <div
+            className="absolute w-20 h-20 rounded-full border border-orange-300"
+            style={{
+              top: "45%",
+              left: "25%",
+              animation: "floatBubble 18s ease-in-out infinite",
+              background:
+                "radial-gradient(circle at 30% 30%, rgba(251, 184, 126, 0.1), transparent)",
+            }}
+          />
+          <div
+            className="absolute w-24 h-24 rounded-full border border-orange-200"
+            style={{
+              bottom: "15%",
+              right: "30%",
+              animation: "floatBubble 23s ease-in-out infinite reverse",
+              background:
+                "radial-gradient(circle at 30% 30%, rgba(254, 243, 199, 0.15), transparent)",
+            }}
+          />
+          <div
+            className="absolute w-16 h-16 rounded-full border border-orange-300"
+            style={{
+              top: "20%",
+              right: "15%",
+              animation: "floatBubble 19s ease-in-out infinite",
+              background:
+                "radial-gradient(circle at 30% 30%, rgba(251, 184, 126, 0.08), transparent)",
+            }}
+          />
+          <div
+            className="absolute w-28 h-28 rounded-full border border-orange-100"
+            style={{
+              bottom: "40%",
+              left: "12%",
+              animation: "floatBubble 21s ease-in-out infinite reverse",
+              background:
+                "radial-gradient(circle at 30% 30%, rgba(254, 243, 199, 0.12), transparent)",
+            }}
+          />
+        </div>
+
+        <style>{`
+          @keyframes floatBubble {
+            0%, 100% {
+              transform: translateY(0) translateX(0) scale(1);
+            }
+            25% {
+              transform: translateY(-40px) translateX(30px) scale(1.05);
+            }
+            50% {
+              transform: translateY(-20px) translateX(-30px) scale(0.95);
+            }
+            75% {
+              transform: translateY(-50px) translateX(20px) scale(1.02);
+            }
+          }
+        `}</style>
+
         {/* Testimonials Carousel */}
         <div className=" w-full sm:w-[80%] md:w-[70%] lg:w-[60%] relative z-10  max-w-4xl  ">
           <div

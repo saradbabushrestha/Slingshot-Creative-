@@ -3,7 +3,7 @@ import React from "react";
 const About: React.FC = () => {
   return (
     <div className="min-h-50% bg-gray-50 py-16 px-4">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-12 items-center">
         {/* Left side - Images */}
         <div className="relative w-full flex justify-center lg:justify-start">
           {/* Top logo */}
@@ -16,7 +16,7 @@ const About: React.FC = () => {
           </div>
 
           {/* Bottom logo */}
-          <div className="absolute bottom-15 left-1/2 transform -translate-x-1/2 lg:left-1/5 lg:-translate-x-1/2 z-20 bg-white p-3 rounded-lg shadow-lg border-2 border-gray-200">
+          <div className="absolute bottom-15 left-1/2 transform -translate-x-1/2 lg:left-1/5 lg:-translate-x-1/2 z-20 bg-white p-3 rounded-lg shadow-lg border-2 border-gray-200 pt-2">
             <img
               src="/aboutus2.png"
               alt="Budhanilkantha Youth Council Logo"
