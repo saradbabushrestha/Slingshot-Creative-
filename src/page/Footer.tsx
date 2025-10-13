@@ -28,7 +28,7 @@ const AnimatedFooter: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black flex items-end justify-center p-8">
+    <div className="min-h-60 bg-black flex items-end justify-center p-8">
       <div className="w-full max-w-7xl pb-8">
         {/* Header Section */}
         <div className="flex justify-between items-center mb-12">
@@ -223,7 +223,7 @@ const AnimatedFooter: React.FC = () => {
           }`}
         >
           <p>Copyright© 2025 Sarad Babu Shrestha. All Rights Reserved.</p>
-          <div className="flex gap-4 items-center">
+          {/* <div className="flex gap-4 items-center">
             <a href="#" className="hover:text-white transition-colors">
               User Terms & Conditions
             </a>
@@ -231,7 +231,7 @@ const AnimatedFooter: React.FC = () => {
             <a href="#" className="hover:text-white transition-colors">
               Privacy Policy
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

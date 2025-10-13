@@ -26,11 +26,28 @@ const PortfolioGrid: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 to-amber-100  py-16 px-4">
+      <style>
+        {`
+        .shimmer-text {
+          background: linear-gradient(
+            90deg,
+            #92400e 0%,
+            #d97706 50%,
+            #92400e 100%
+          );
+          background-size: 200% 100%;
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: shimmer 3s linear infinite;
+        }
+      `}
+      </style>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
-            Our Beautiful Works
+            Our <span className="shimmer-text">Beautiful Works</span>
           </h1>
           <p className="text-gray-600 text-lg">
             We help our clients grow their bottom-line with clear and

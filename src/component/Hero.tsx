@@ -29,6 +29,23 @@ const SlingShotLanding: React.FC = () => {
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-orange-50 to-amber-100 overflow-x-hidden">
+      <style>
+        {`
+        .shimmer-text {
+          background: linear-gradient(
+            90deg,
+            #92400e 0%,
+            #d97706 50%,
+            #92400e 100%
+          );
+          background-size: 200% 100%;
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: shimmer 3s linear infinite;
+        }
+      `}
+      </style>
       {/* Navigation */}
       <NavBar
         scrollY={scrollY}
@@ -38,8 +55,10 @@ const SlingShotLanding: React.FC = () => {
 
       {/* Hero Section */}
       <section className="relative w-full pt-[6rem] pb-20 flex flex-col items-center text-center px-4 sm:px-6">
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight animate-fade-in">
-          Aim Higher. Create Bolder. Impact Deeper.
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight animate-fade-in ">
+          <span className="shimmer-text">
+            Aim Higher. Create Bolder. Impact Deeper.
+          </span>
         </h1>
         <p className="text-base sm:text-lg lg:text-xl text-gray-700 mb-8 sm:mb-10 max-w-3xl leading-relaxed">
           To empower businesses of all sizes to achieve their marketing
