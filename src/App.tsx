@@ -4,6 +4,7 @@ import FAQAccordion from "./page/FAQ";
 import AnimatedFooter from "./page/Footer";
 
 import Home from "./page/Home";
+import HowWeWork from "./page/HowWeWork";
 import MailSection from "./page/MailSection";
 import PortfolioGrid from "./page/Project";
 import Services from "./page/Service";
@@ -19,7 +20,9 @@ const App: React.FC = () => {
       <WhyChooseUs />
       <PortfolioGrid />
       <TestimonialsCarousel />
+
       <MailSection />
+      <HowWeWork />
       <FAQAccordion />
       <AnimatedFooter />
     </>

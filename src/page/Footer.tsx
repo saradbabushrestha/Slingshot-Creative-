@@ -17,14 +17,45 @@ const AnimatedFooter: React.FC = () => {
     setIsVisible(true);
   }, []);
 
-  const navLinks = ["Home", "About Us", "Service", "Resume", "Project"];
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Service", href: "/services" },
+    { name: "Resume", href: "/resume" },
+    { name: "Project", href: "/projects" },
+  ];
 
   const socialIcons = [
-    { Icon: Facebook, delay: 0, label: "Facebook" },
-    { Icon: Youtube, delay: 0.1, label: "YouTube" },
-    { Icon: Phone, delay: 0.2, label: "WhatsApp" },
-    { Icon: Send, delay: 0.3, label: "Telegram" },
-    { Icon: Twitter, delay: 0.4, label: "Twitter" },
+    {
+      Icon: Facebook,
+      href: "https://facebook.com/yourprofile",
+      delay: 0,
+      label: "Facebook",
+    },
+    {
+      Icon: Youtube,
+      href: "https://youtube.com/@yourchannel",
+      delay: 0.1,
+      label: "YouTube",
+    },
+    {
+      Icon: Phone,
+      href: "https://wa.me/9770000000000",
+      delay: 0.2,
+      label: "WhatsApp",
+    },
+    {
+      Icon: Send,
+      href: "https://t.me/yourtelegramusername",
+      delay: 0.3,
+      label: "Telegram",
+    },
+    {
+      Icon: Twitter,
+      href: "https://twitter.com/yourprofile",
+      delay: 0.4,
+      label: "Twitter",
+    },
   ];
 
   return (
@@ -39,15 +70,18 @@ const AnimatedFooter: React.FC = () => {
                 : "-translate-x-20 opacity-0"
             }`}
           >
-            Lets Connect
+            Let’s Connect
           </h1>
-          <button className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-2 group">
+          <a
+            href="mailto:slingshot@gmail.com"
+            className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-2 group"
+          >
             Hire me
             <ArrowRight
               className="group-hover:translate-x-1 transition-transform duration-300"
               size={20}
             />
-          </button>
+          </a>
         </div>
 
         {/* Divider */}
@@ -64,43 +98,24 @@ const AnimatedFooter: React.FC = () => {
             }`}
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="relative w-14 h-14 bg-orange-600 rounded-full flex items-center justify-center transform transition-transform duration-300 hover:rotate-12">
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  className="transform -rotate-45"
-                >
-                  <path
-                    d="M8 24L24 8M24 8H12M24 8V20"
-                    stroke="white"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <div>
-                <h2 className="text-2xl font-bold text-white">SlingShot</h2>
-                <p className="text-orange-600 text-xs tracking-widest">
-                  CREATIVE
-                </p>
-              </div>
+              <img src="/horilogo.png" alt="Logo" className="w-70 h-30" />
             </div>
 
             <p className="text-gray-400 leading-relaxed mb-6 text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              congue interdum ligula a dignissim. Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit. Sed lobortis orci elementum egestas
-              lobortis.
+              To empower businesses of all sizes to achieve their marketing
+              aspirations by delivering bespoke, creative solutions that not
+              only capture attention but also drive meaningful engagement and
+              growth.
             </p>
 
             {/* Social Icons */}
             <div className="flex gap-3">
-              {socialIcons.map(({ Icon, delay, label }, idx) => (
-                <button
+              {socialIcons.map(({ Icon, href, delay, label }, idx) => (
+                <a
                   key={idx}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className={`w-9 h-9 bg-gray-900 rounded-full flex items-center justify-center cursor-pointer transform hover:bg-orange-600 hover:scale-110 transition-all duration-300 ${
                     isVisible ? "scale-100 opacity-100" : "scale-0 opacity-0"
@@ -110,7 +125,7 @@ const AnimatedFooter: React.FC = () => {
                   }}
                 >
                   <Icon size={16} className="text-white" />
-                </button>
+                </a>
               ))}
             </div>
           </div>
@@ -129,19 +144,19 @@ const AnimatedFooter: React.FC = () => {
                 Navigation
               </h3>
               <ul className="space-y-2">
-                {navLinks.map((link, idx) => (
+                {navLinks.map(({ name, href }, idx) => (
                   <li
-                    key={link}
-                    onMouseEnter={() => setHoveredLink(link)}
+                    key={name}
+                    onMouseEnter={() => setHoveredLink(name)}
                     onMouseLeave={() => setHoveredLink(null)}
                   >
                     <a
-                      href="#"
+                      href={href}
                       className={`text-gray-400 hover:text-white transition-all duration-300 inline-block text-sm ${
-                        hoveredLink === link ? "translate-x-2" : ""
+                        hoveredLink === name ? "translate-x-2" : ""
                       }`}
                     >
-                      {link}
+                      {name}
                     </a>
                   </li>
                 ))}
@@ -161,10 +176,10 @@ const AnimatedFooter: React.FC = () => {
               </h3>
               <div className="space-y-2">
                 <a
-                  href="tel:+9770000000000"
+                  href="tel:+9779812345678"
                   className="text-gray-400 hover:text-white transition-colors block text-sm"
                 >
-                  +977 0000000000
+                  +977 9812345678
                 </a>
                 <a
                   href="mailto:slingshot@gmail.com"
@@ -223,15 +238,15 @@ const AnimatedFooter: React.FC = () => {
           }`}
         >
           <p>Copyright© 2025 Sarad Babu Shrestha. All Rights Reserved.</p>
-          {/* <div className="flex gap-4 items-center">
-            <a href="#" className="hover:text-white transition-colors">
-              User Terms & Conditions
+          <div className="flex gap-4 items-center">
+            <a href="/terms" className="hover:text-white transition-colors">
+              Terms & Conditions
             </a>
             <span className="text-gray-700">|</span>
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="/privacy" className="hover:text-white transition-colors">
               Privacy Policy
             </a>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
