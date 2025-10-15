@@ -7,11 +7,13 @@ import {
   Send,
   Twitter,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const AnimatedFooter: React.FC = () => {
   const [email, setEmail] = useState("");
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setIsVisible(true);
@@ -21,8 +23,9 @@ const AnimatedFooter: React.FC = () => {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Service", href: "/services" },
-    { name: "Resume", href: "/resume" },
-    { name: "Project", href: "/projects" },
+    { name: "Case Studies", href: "/portfolio" },
+    { name: "Testimonials", href: "/testimonials" },
+    { name: "FAQ", href: "/faq" },
   ];
 
   const socialIcons = [
@@ -58,6 +61,12 @@ const AnimatedFooter: React.FC = () => {
     },
   ];
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setEmail("");
+    navigate("/mail"); // ✅ navigate to Mail Section route
+  };
+
   return (
     <div className="min-h-60 bg-black flex items-end justify-center p-8">
       <div className="w-full max-w-7xl pb-8">
@@ -76,7 +85,7 @@ const AnimatedFooter: React.FC = () => {
             href="mailto:slingshot@gmail.com"
             className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-2 group"
           >
-            Hire me
+            Hire us
             <ArrowRight
               className="group-hover:translate-x-1 transition-transform duration-300"
               size={20}
@@ -202,13 +211,7 @@ const AnimatedFooter: React.FC = () => {
             <h3 className="text-orange-600 font-semibold mb-4 text-sm">
               Get the latest information
             </h3>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                setEmail("");
-              }}
-              className="relative"
-            >
+            <form onSubmit={handleSubmit} className="relative">
               <input
                 type="email"
                 placeholder="Email Address"
@@ -238,15 +241,6 @@ const AnimatedFooter: React.FC = () => {
           }`}
         >
           <p>Copyright© 2025 Sarad Babu Shrestha. All Rights Reserved.</p>
-          <div className="flex gap-4 items-center">
-            <a href="/terms" className="hover:text-white transition-colors">
-              Terms & Conditions
-            </a>
-            <span className="text-gray-700">|</span>
-            <a href="/privacy" className="hover:text-white transition-colors">
-              Privacy Policy
-            </a>
-          </div>
         </div>
       </div>
     </div>
