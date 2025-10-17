@@ -61,7 +61,7 @@ const NavBar: React.FC<NavBarProps> = ({
             className="flex items-center space-x-3 cursor-pointer"
             onClick={() => handleScroll("/")}
           >
-            <img src="/horilogo.png" alt="Logo" className="w-auto h-16" />
+            <img src="/logo1.png" alt="Logo" className="w-auto h-16" />
           </div>
 
           {/* Desktop Navigation */}
@@ -76,7 +76,7 @@ const NavBar: React.FC<NavBarProps> = ({
                   onClick={() => handleScroll(item.path)}
                   className={`text-sm font-medium transition-colors ${
                     active
-                      ? "text-orange-600"
+                      ? "text-gray-700"
                       : "text-gray-700 hover:text-orange-600"
                   }`}
                 >

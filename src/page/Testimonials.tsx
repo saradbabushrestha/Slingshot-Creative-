@@ -59,7 +59,7 @@ const TestimonialsCarousel: React.FC = () => {
       <div className="w-full lg:w-1/5 ml-[0] lg:ml-[6%] bg-white flex flex-col items-center lg:items-start justify-center py-12 ">
         <div className="flex flex-col items-center lg:items-center text-center lg:text-left">
           <img
-            src="/singlelogo1.png"
+            src="/logo2.png"
             alt="Logo"
             className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-40 lg:h-40 mb-6"
           />

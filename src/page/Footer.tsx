@@ -7,13 +7,11 @@ import {
   Send,
   Twitter,
 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 
 const AnimatedFooter: React.FC = () => {
   const [email, setEmail] = useState("");
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     setIsVisible(true);
@@ -60,12 +58,6 @@ const AnimatedFooter: React.FC = () => {
       label: "Twitter",
     },
   ];
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setEmail("");
-    navigate("/mail"); // ✅ navigate to Mail Section route
-  };
 
   return (
     <div className="min-h-60 bg-black flex items-end justify-center p-8">
@@ -211,7 +203,13 @@ const AnimatedFooter: React.FC = () => {
             <h3 className="text-orange-600 font-semibold mb-4 text-sm">
               Get the latest information
             </h3>
-            <form onSubmit={handleSubmit} className="relative">
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                setEmail("");
+              }}
+              className="relative"
+            >
               <input
                 type="email"
                 placeholder="Email Address"
@@ -241,6 +239,15 @@ const AnimatedFooter: React.FC = () => {
           }`}
         >
           <p>Copyright© 2025 Sarad Babu Shrestha. All Rights Reserved.</p>
+          {/* <div className="flex gap-4 items-center">
+            <a href="/terms" className="hover:text-white transition-colors">
+              Terms & Conditions
+            </a>
+            <span className="text-gray-700">|</span>
+            <a href="/privacy" className="hover:text-white transition-colors">
+              Privacy Policy
+            </a>
+          </div> */}
         </div>
       </div>
     </div>
