@@ -82,14 +82,14 @@ const SlingShotLanding: React.FC = () => {
             }}
           >
             {[
-              "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=400&h=600&fit=crop",
-              "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=400&h=600&fit=crop",
-              "https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?w=400&h=600&fit=crop",
-              "https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?w=400&h=600&fit=crop",
-              "https://images.unsplash.com/photo-1483794344563-d27a8d18014e?w=400&h=600&fit=crop",
-              "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400&h=600&fit=crop",
-              "https://images.unsplash.com/photo-1483794344563-d27a8d18014e?w=400&h=600&fit=crop",
-              "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400&h=600&fit=crop",
+              "public/1.png",
+              "public/2.png",
+              "public/3.png",
+              "public/4.png",
+              "public/5.png",
+              "public/6.png",
+              "public/7.png",
+              "public/8.png",
             ].map((src, i) => {
               const angle = (i * 360) / 8;
               return (
