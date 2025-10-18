@@ -16,56 +16,56 @@ const Services: React.FC = () => {
       title: "Content Creation & Marketing",
       description:
         "We produce engaging and relevant content across various formats to tell your brand's story and attract your ideal customers.",
-      image: "/horilogo.png",
+      image: "/dmc.png",
     },
     {
       id: 2,
       title: "Digital Marketing Campaigns",
       description:
         "We design and execute data-driven digital campaigns that maximize reach, engagement, and conversion across all online channels.",
-      image: "/horilogo.png",
+      image: "/dmm.png",
     },
     {
       id: 3,
       title: "Video Production",
       description:
         "We bring narratives to life through high-quality video content, from concept to post-production, for impactful storytelling.",
-      image: "/horilogo.png",
+      image: "/vd.png",
     },
     {
       id: 4,
       title: "Graphic Design & Visual Branding",
       description:
         "We create stunning visual identities and compelling graphic assets that ensure your brand stands out in a crowded marketplace.",
-      image: "/horilogo.png",
+      image: "/gdm.png",
     },
     {
       id: 5,
       title: "Social Media Management",
       description:
         "We cultivate vibrant online communities and manage your social presence to foster brand loyalty and drive conversations.",
-      image: "/horilogo.png",
+      image: "/smc.png",
     },
     {
       id: 6,
       title: "Website Design & Development",
       description:
         "We craft intuitive, aesthetically pleasing, and high-performing websites that serve as the digital cornerstone of your brand.",
-      image: "/horilogo.png",
+      image: "/c.png",
     },
     {
       id: 7,
       title: "Public Relations & Outreach",
       description:
         "We strategically manage your public image and secure valuable media placements to enhance credibility and awareness.",
-      image: "/horilogo.png",
+      image: "/pro.png",
     },
     {
       id: 8,
       title: "Product Analysis",
       description:
         "Provide Manufacturers With The Deliverables Necessary To Understand And Perfect The Product",
-      image: "/horilogo.png",
+      image: "/paa.png",
     },
   ];
 
