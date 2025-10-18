@@ -45,13 +45,13 @@ const MailSection: React.FC = () => {
   ];
 
   const topics = [
-    { value: "product-design", label: "🎨 Product Design" },
-    { value: "website-development", label: "💻 Website Development" },
-    { value: "mobile-app", label: "📱 Mobile App Development" },
-    { value: "branding", label: "✨ Branding & Identity" },
-    { value: "marketing", label: "📊 Digital Marketing" },
-    { value: "consultation", label: "💡 Strategy Consultation" },
-    { value: "other", label: "🔧 Other Services" },
+    { value: "product-design", label: " Product Design" },
+    { value: "website-development", label: "Website Development" },
+    { value: "mobile-app", label: "Mobile App Development" },
+    { value: "branding", label: " Branding & Identity" },
+    { value: "marketing", label: "Digital Marketing" },
+    { value: "consultation", label: "Strategy Consultation" },
+    { value: "other", label: "Other Services" },
   ];
 
   useEffect(() => {

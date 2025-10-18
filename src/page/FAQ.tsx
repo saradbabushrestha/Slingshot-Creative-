@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ChevronDown, HelpCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface FAQItem {
   question: string;
@@ -125,7 +126,7 @@ const FAQAccordion: React.FC = () => {
         <div className="mt-12 text-center">
           <p className="text-amber-800 mb-4">Still have questions?</p>
           <button className="bg-amber-900 text-amber-50 px-8 py-3 rounded-full font-medium hover:bg-amber-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-            Contact Support
+            <Link to="/mail">Contact Support</Link>
           </button>
         </div>
       </div>

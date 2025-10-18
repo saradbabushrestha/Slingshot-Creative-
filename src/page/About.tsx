@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const About: React.FC = () => {
   return (
@@ -44,7 +45,7 @@ const About: React.FC = () => {
             your brand resonate powerfully with its audience.
           </p>
           <button className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl">
-            EXPLORE SERVICES
+            <Link to="/services"> EXPLORE SERVICES</Link>
           </button>
         </div>
       </div>
