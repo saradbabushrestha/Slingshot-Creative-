@@ -1,5 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { Loader2 } from "lucide-react";
+
+// // Import local images
+// import work1 from "../assets/portfolio/work1.jpg";
+import pone from "/pone.png";
+import ptwo from "/ptwo.png";
+import pthree from "/pthree.png";
+import pfour from "/pfour.png";
+import pfive from "/pfive.png";
+import psix from "/psix.png";
+import pseven from "/pseven.png";
+import parking from "/parking.png";
+import peight from "/peight.png";
+import pexelpulse from "/pexelpulse.png";
+import portfolio from "/portfolio.png";
+import tshirt from "/tshirt.png";
 
 interface PortfolioItem {
   id: number;
@@ -8,76 +23,45 @@ interface PortfolioItem {
 }
 
 const PortfolioGrid: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(false);
-
-  const portfolioItems: PortfolioItem[] = Array.from(
-    { length: 12 },
-    (_, i) => ({
-      id: i + 1,
-      imageUrl: `https://picsum.photos/seed/${i + 1}/400/400`,
-      title: `Project ${i + 1}`,
-    })
-  );
-
-  const loadMore = () => {
-    setIsLoading(true);
-    setTimeout(() => setIsLoading(false), 1500);
-  };
+  const portfolioItems: PortfolioItem[] = [
+    { id: 1, imageUrl: pone, title: "Project 1" },
+    { id: 1, imageUrl: ptwo, title: "Project 1" },
+    { id: 1, imageUrl: pthree, title: "Project 1" },
+    { id: 1, imageUrl: pfour, title: "Project 1" },
+    { id: 1, imageUrl: pfive, title: "Project 1" },
+    { id: 1, imageUrl: psix, title: "Project 1" },
+    { id: 1, imageUrl: pseven, title: "Project 1" },
+    { id: 1, imageUrl: peight, title: "Project 1" },
+    { id: 1, imageUrl: parking, title: "Project 1" },
+    { id: 1, imageUrl: pexelpulse, title: "Project 1" },
+    { id: 1, imageUrl: portfolio, title: "Project 1" },
+    { id: 1, imageUrl: tshirt, title: "Project 1" },
+  ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-amber-100  py-16 px-4">
-      <style>
-        {`
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-amber-100 py-16 px-4">
+      <style>{`
         .shimmer-text {
-          background: linear-gradient(
-            90deg,
-            #92400e 0%,
-            #d97706 50%,
-            #92400e 100%
-          );
+          background: linear-gradient(90deg, #92400e 0%, #d97706 50%, #92400e 100%);
           background-size: 200% 100%;
           -webkit-background-clip: text;
           background-clip: text;
           -webkit-text-fill-color: transparent;
           animation: shimmer 3s linear infinite;
         }
-      `}
-      </style>
+      `}</style>
+
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
             Our <span className="shimmer-text">Beautiful Works</span>
           </h1>
           <p className="text-gray-600 text-lg">
             We help our clients grow their bottom-line with clear and
-            <br />
-            professional websites.
+            <br /> professional websites.
           </p>
         </div>
 
-        {/* Load More Button */}
-        {/* <div className="flex justify-center mb-12">
-          <button
-            onClick={loadMore}
-            disabled={isLoading}
-            className="px-8 py-3 bg-white border-2 border-gray-300 rounded-md font-medium text-gray-700 hover:border-gray-400 hover:shadow-md transition-all duration-300 flex items-center gap-2 disabled:opacity-70"
-          >
-            {isLoading ? (
-              <>
-                <Loader2 className="w-5 h-5 animate-spin" />
-                Loading...
-              </>
-            ) : (
-              <>
-                <Loader2 className="w-5 h-5" />
-                Load More
-              </>
-            )}
-          </button>
-        </div> */}
-
-        {/* Uniform Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {portfolioItems.map((item) => (
             <div
@@ -94,22 +78,12 @@ const PortfolioGrid: React.FC = () => {
                   {item.title}
                 </h3>
                 <p className="text-white/80 text-sm mt-1">
-                  Its Short Description{" "}
+                  Its Short Description
                 </p>
               </div>
             </div>
           ))}
         </div>
-
-        {/* Loading Indicator */}
-        {isLoading && (
-          <div className="mt-8 flex justify-center">
-            <div className="flex items-center gap-2 text-gray-600">
-              <Loader2 className="w-6 h-6 animate-spin" />
-              <span>Loading more works...</span>
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );
