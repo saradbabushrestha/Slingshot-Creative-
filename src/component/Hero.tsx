@@ -66,9 +66,11 @@ const SlingShotLanding: React.FC = () => {
           aspirations by delivering bespoke, creative solutions that not only
           capture attention but also drive meaningful engagement and growth.
         </p>
-        <button className="bg-gradient-to-r from-amber-700 to-orange-700 text-white px-8 sm:px-10 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:shadow-2xl transform hover:scale-105 transition-all">
-          <Link to="/about">Explore More</Link>
-        </button>
+        <Link to="/about">
+          <button className="bg-gradient-to-r from-amber-700 to-orange-700 text-white px-8 sm:px-10 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:shadow-2xl transform hover:scale-105 transition-all">
+            Explore More
+          </button>
+        </Link>
       </section>
 
       {/* 3D Image Carousel Section */}

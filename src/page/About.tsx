@@ -44,9 +44,11 @@ const About: React.FC = () => {
             originality, strategic precision, and measurable impact, helping
             your brand resonate powerfully with its audience.
           </p>
-          <button className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl">
-            <Link to="/services"> EXPLORE SERVICES</Link>
-          </button>
+          <Link to="/services">
+            <button className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl">
+              EXPLORE SERVICES
+            </button>
+          </Link>
         </div>
       </div>
     </div>

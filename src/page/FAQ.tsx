@@ -16,7 +16,7 @@ const faqData: FAQItem[] = [
   {
     question: "How do you measure the success of your campaigns?",
     answer:
-      "We define success based on your specific goals. We utilize key performance indicators (KPIs) such as website traffic, conversion rates, engagement metrics, and ROI, providing regular, transparent reports on our progress.",
+      "We define success based on your specific goals. We utilize key performance indicators (KPI) such as website traffic, conversion rates, engagement metrics, and ROI, providing regular, transparent reports on our progress.",
   },
   {
     question: "What is your typical project timeline?",
