@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "./Navbar";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+type MediaItem = {
+  type: "image" | "video";
+  src: string;
+};
 
 const SlingShotLanding: React.FC = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -9,7 +14,19 @@ const SlingShotLanding: React.FC = () => {
     window.innerWidth < 640 ? 300 : window.innerWidth < 1024 ? 380 : 450
   );
 
-  // Responsive translateZ adjustment
+  // Media list (Images + Videos)
+  const mediaItems: MediaItem[] = [
+    { type: "image", src: "/public/1.jpeg" },
+    { type: "video", src: "/public/intro.mp4" },
+    { type: "image", src: "/public/2.jpeg" },
+    { type: "video", src: "/public/1.mp4" },
+    { type: "image", src: "/public/3.jpeg" },
+    { type: "image", src: "/public/4.jpeg" },
+    { type: "video", src: "/public/Cat web meme.mp4" },
+    { type: "image", src: "/public/5.jpeg" },
+  ];
+
+  // Responsive translateZ
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) setTranslateZ(300);
@@ -21,7 +38,7 @@ const SlingShotLanding: React.FC = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Scroll detection for navbar
+  // Scroll detection
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
@@ -29,25 +46,24 @@ const SlingShotLanding: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-orange-50 to-amber-100 overflow-x-hidden">
-      <style>
-        {`
+    <div className="w-full min-h-screen bg-gradient-to-br from-orange-50 to-amber-100 ">
+      {/* Shimmer Style */}
+      <style>{`
         .shimmer-text {
-          background: linear-gradient(
-            90deg,
-            #92400e 0%,
-            #d97706 50%,
-            #92400e 100%
-          );
+          background: linear-gradient(90deg, #92400e, #d97706, #92400e);
           background-size: 200% 100%;
           -webkit-background-clip: text;
-          background-clip: text;
           -webkit-text-fill-color: transparent;
           animation: shimmer 3s linear infinite;
         }
-      `}
-      </style>
-      {/* Navigation */}
+
+        @keyframes shimmer {
+          from { background-position: 0% }
+          to { background-position: 200% }
+        }
+      `}</style>
+
+      {/* Navbar */}
       <NavBar
         scrollY={scrollY}
         isMenuOpen={isMenuOpen}
@@ -55,60 +71,64 @@ const SlingShotLanding: React.FC = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative w-full pt-[6rem] pb-20 flex flex-col items-center text-center px-4 sm:px-6">
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight animate-fade-in ">
+      <section className="relative w-full pt-[6rem] pb-20 flex flex-col items-center text-center px-4">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
           <span className="shimmer-text">
             Aim Higher. Create Bolder. Impact Deeper.
           </span>
         </h1>
-        <p className="text-base sm:text-lg lg:text-xl text-gray-700 mb-8 sm:mb-10 max-w-3xl leading-relaxed">
+
+        <p className="text-base sm:text-lg lg:text-xl text-gray-700 mb-10 max-w-3xl">
           To empower businesses of all sizes to achieve their marketing
-          aspirations by delivering bespoke, creative solutions that not only
-          capture attention but also drive meaningful engagement and growth.
+          aspirations by delivering bespoke, creative solutions that drive
+          engagement and growth.
         </p>
+
         <Link to="/about">
-          <button className="bg-gradient-to-r from-amber-700 to-orange-700 text-white px-8 sm:px-10 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:shadow-2xl transform hover:scale-105 transition-all">
+          <button className="bg-gradient-to-r from-amber-700 to-orange-700 text-white px-10 py-4 rounded-lg font-semibold hover:scale-105 transition">
             Explore More
           </button>
         </Link>
       </section>
 
-      {/* 3D Image Carousel Section */}
-      <section className="relative w-full h-[450px] sm:h-[600px] flex items-center justify-center overflow-hidden">
-        <div className="relative w-[90%] sm:w-[420px] md:w-[500px] h-[300px] sm:h-[380px] md:h-[420px] perspective-[1000px] will-change-transform">
+      {/* 3D Image + Video Carousel */}
+      <section className="relative w-full h-[450px] sm:h-[600px] flex items-center justify-center ">
+        <div className="relative w-[90%] sm:w-[420px] md:w-[500px] h-[300px] sm:h-[380px] md:h-[420px] perspective-[1000px]">
           <div
             className="absolute inset-0 flex items-center justify-center"
             style={{
               transformStyle: "preserve-3d",
               animation: "spin 25s linear infinite",
-              transformOrigin: "center center",
             }}
           >
-            {[
-              "public/1.png",
-              "public/2.png",
-              "public/3.png",
-              "public/4.png",
-              "public/5.png",
-              "public/6.png",
-              "public/7.png",
-              "public/8.png",
-            ].map((src, i) => {
-              const angle = (i * 360) / 8;
+            {mediaItems.map((item, i) => {
+              const angle = (i * 360) / mediaItems.length;
+
               return (
                 <div
                   key={i}
-                  className="absolute w-28 h-44 sm:w-40 sm:h-56 md:w-52 md:h-72 rounded-2xl overflow-hidden shadow-xl transition-transform duration-300 hover:scale-110"
+                  className="absolute w-28 h-44 sm:w-40 sm:h-56 md:w-52 md:h-72 rounded-2xl  shadow-xl hover:scale-110 transition"
                   style={{
                     transform: `rotateY(${angle}deg) translateZ(${translateZ}px)`,
                     backfaceVisibility: "visible",
                   }}
                 >
-                  <img
-                    src={src}
-                    alt={`Slide ${i + 1}`}
-                    className="w-full h-full object-cover"
-                  />
+                  {item.type === "image" ? (
+                    <img
+                      src={item.src}
+                      alt={`media-${i}`}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <video
+                      src={item.src}
+                      className="w-full h-full object-cover"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                    />
+                  )}
                 </div>
               );
             })}
@@ -118,8 +138,6 @@ const SlingShotLanding: React.FC = () => {
 
       {/* Global Styles */}
       <style>{`
-        html { overflow-y: scroll; }
-
         @keyframes spin {
           from { transform: rotateY(0deg); }
           to { transform: rotateY(360deg); }

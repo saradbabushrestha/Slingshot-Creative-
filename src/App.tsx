@@ -16,7 +16,7 @@ import TestimonialsCarousel from "./page/Testimonials";
 import MailSection from "./page/MailSection";
 import HowWeWork from "./page/HowWeWork";
 import FAQAccordion from "./page/FAQ";
-import AnimatedFooter from "./page/Footer"; 
+import AnimatedFooter from "./page/Footer";
 
 // Scroll handler component
 const ScrollToSection: React.FC = () => {
